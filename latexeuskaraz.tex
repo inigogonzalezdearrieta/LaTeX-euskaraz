@@ -1,0 +1,61 @@
+\documentclass[a4paper]{article}
+% Uncomment to use a two-column layout.
+%\documentclass[a4paper,twocolumn]{article}
+
+% Load the package:
+\usepackage{latexeuskaraz}
+
+\usepackage{lipsum} %dummy text.
+\usepackage{mwe} %dummy figures.
+
+\title{\LaTeX \, euskaraz}
+\author{Iñigo González de Arrieta}
+\date{\eusdata} % Equivalent of \today in Basque.
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    Laburpena.
+\end{abstract}
+
+\section{Sarrera}
+
+\lipsum[1]
+
+\section{Eragiketa-metodoa}
+
+\lipsum[2]
+
+\section{Emaitzak}
+
+\lipsum[3]
+
+\begin{table}[ht]
+\centering
+\caption{Taula bat.}
+\begin{tabular}{ccc}
+A & B & C \\
+\hline
+a & b & c \\
+a & b & c \\
+a & b & c  
+\end{tabular}
+\end{table}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{example-image-a}
+    \caption{Irudi bat.}
+\end{figure}
+
+\section{Ondorioak}
+
+\lipsum[4]
+
+\begin{thebibliography}{99}
+\bibitem{ibarra2014} IBARRA, E. eta ETXEBARRIA, J.R. 2014. <<\LaTeX: euskarazko dokumentu zientifiko-teknikoen ediziorako baliabideak>>, \textit{Ekaia} \textbf{27}, 329-343.
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,57 @@
+%%
+%% This is the file `latexeuskaraz.sty',
+%% created by I\~nigo Gonz\'alez de Arrieta.
+%%
+%% Adapted from the file 'ekaia.sty'.
+%% Copyright (C) 2014-2019, Edorta Ibarra and the Ekaia Journal (UPV/EHU).
+%% Modified under the conditions of the LaTeX Project Public License version 1.3c.
+%% The latest version of this license is in
+%% http://www.latex-project.org/lppl.txt
+%%
+%% -----------------------------------------------------------------------
+%%
+%% Description
+%%
+%% This simple template is meant for writing technical documents in the Basque language, which has numbering and date conventions that differ from English. It is based on the template for the Basque-language journal Ekaia without some of its journal-specific features.
+%%
+%% -----------------------------------------------------------------------
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{latexeuskaraz}[2024/10/05 LaTeX euskaraz]
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[english,basque]{babel}
+\selectlanguage{basque}
+\RequirePackage{basque-date}
+\RequirePackage{indentfirst}
+\RequirePackage[T1]{fontenc}
+
+\frenchspacing
+\linespread{1.3}
+
+\makeatletter
+\def\fnum@figure{\textbf{\fontsize{10}{15}\selectfont\thefigure .~irudia}}
+\makeatother
+
+\makeatletter
+\def\fnum@table{\textbf{\fontsize{10}{15}\selectfont \thetable .~taula}}
+\makeatother
+
+\makeatletter
+\long\def\@makecaption#1#2{%
+\vskip\abovecaptionskip
+\sbox\@tempboxa{#1\textbf{.} \fontsize{10}{15}\selectfont #2}%
+\ifdim\wd\@tempboxa >\hsize
+#1\textbf{.} \fontsize{10}{15}\selectfont #2\par
+\else
+\global \@minipagefalse
+\hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+\fi
+\vskip\belowcaptionskip}
+\makeatother
+
+\renewcommand\thesection {\indent \arabic{section}.}
+\renewcommand\thesubsection {\thesection \arabic{subsection}.}
+\renewcommand\thesubsubsection {\thesubsection \arabic{subsubsection}.}
+\renewcommand\theparagraph {\thesubsubsection \arabic{paragraph}.}
+\renewcommand\thesubparagraph {\theparagraph \arabic{subparagraph}.}
